@@ -52,35 +52,47 @@ iframe{
 	border: 0px;
 }
 
-/* Modificar el tamaño de fuente del menu */
-.nav {
-	font-size: 20px;
+/* Menu */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0% 7% 0% 7%; 
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;  
+  
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
-/* Estilo de la lista usado para el menú */
-ul.nav {
-    list-style-type: none;
-    margin: auto;
-    padding: 1;
-    overflow: hidden;
-}
-li.nav {
-  float: left;
-}
-
-/* Estilo de los links del menú, para que tengan el bloque alrededor, color y además que cambie de color al pasar el ratón por encima */
-a:link.nav, a:visited.nav {
-    display: block;
-    width: 500px;
+.menu-item{
+	background: #98bf21;
+	width: 50%;
+	text-align: center;
     font-weight: bold;
-    color: #FFFFFF;
-    background-color: #98bf21;
-    text-align: center;
-    margin: auto;
-    padding: 10px;
-    text-decoration: none;
-    text-transform: uppercase;
+	font-size: 1.3em;
 }
-a:hover.nav, a:active.nav {
-    background-color: #7A991A;
+
+.menu a {
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  color: white;
+}
+
+.menu a:hover {
+  background: #7A991A;
+}
+
+@media all and (max-width: 550px){
+	.menu{
+		margin: 0% 3% 0% 3%;
+	}
+	.menu-item{
+		width: 100%;
+	}
 }
