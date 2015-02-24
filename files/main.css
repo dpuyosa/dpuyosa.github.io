@@ -17,12 +17,12 @@ a:hover{
 }
 
 /* Para centras las tablas y el menú */
-#centrado{
+.centrado{
 	display: table;   /* Allow the centering to work */
 	margin: 0 auto;
 }
 
 /* Para poner un texto en cursiva se usa éste identificador */
-#cursivo{
+.cursivo{
 	font-style: italic;
 }
