@@ -40,7 +40,7 @@
 	border: 0px;
 }
 
-@media all and (max-width: 900px){
+@media all and (max-width: 1000px){
 	.grid-item{
 		width: 100%;
 	}
