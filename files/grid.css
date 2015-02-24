@@ -12,7 +12,7 @@
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  /*font-size: 120%;*/
+  font-size: 120%;
 }
 
 .grid-item{
@@ -24,9 +24,24 @@
 }
 
 .grid-item-text{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.grid-item-text p, .grid-item-text a{
+  margin: 5% 5% 5% 5%;
 }
 
 .grid-item img{
