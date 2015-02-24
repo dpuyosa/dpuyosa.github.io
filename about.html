@@ -2,20 +2,23 @@
 <html>
   <head>
   	<title>David's About</title>
-    <link rel="stylesheet" type="text/css" href="files/css.css">
+    <link rel="stylesheet" type="text/css" href="files/main.css">
+    <link rel="stylesheet" type="text/css" href="files/menu.css">
     <link rel="shortcut icon" href="files/favicon.ico" />
     <meta charset=" UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=0.8" />
   </head>
-  
-  <body>  
-    <ul class="menu">
-      <li class="menu-item"><a target="_self" href="index.html">Inicio</a></li>
-      <li class="menu-item"><a target="_self" href="about.html">About</a></li>
-    </ul>
-	
+
+  <body>
+    <nav>
+      <?php include 'menu.html'; ?>
+      <ul class="menu">
+        <li class="menu-item"><a target="_self" href="index.html">Inicio</a></li>
+        <li class="menu-item"><a target="_self" href="about.html">About</a></li>
+      </ul>
+    </nav>
 	<br><br>
-	 
+
 	<table id="centrado">
 		<td><a href="https://www.google.es/?gws_rd=ssl#q=laughing+man" target="_blank"><img src="files/man_logo.png"></a>
 		</td>
@@ -26,9 +29,9 @@
 			Bibliografía:<br>
 			<a href="https://cv.ucam.edu/portal" target="_blank">Temas de la asignatura en el campus virtual.</a><br>
 			<a href="http://css-tricks.com/" target="_blank">Web de CSS Tricks.</a><br>
-			<a href="http://www.w3schools.com" target="_blank">Web de w3schools.</a>			
+			<a href="http://www.w3schools.com" target="_blank">Web de w3schools.</a>
 		</td>
 	</table>
-	
+
   </body>
 </html>
