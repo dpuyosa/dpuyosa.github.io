@@ -47,12 +47,10 @@
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-          
-  margin: 5% 5% 5% 5%;
 }
 
-.grid-item-text p, .grid-item-text a{
-  
+.grid-item-text a, .grid-item-text p{
+      margin: 5% 5% 5% 5%;
 }
 
 .grid-item img{
