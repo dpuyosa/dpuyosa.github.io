@@ -1,0 +1,7 @@
+name: "David's Blog"
+description: "Blog de pŕactica"
+
+paginate: 10
+
+markdown: rdiscount
+permalink: pretty

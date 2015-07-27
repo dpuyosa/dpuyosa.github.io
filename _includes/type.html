@@ -1,0 +1,12 @@
+{% assign class = "grid-item" %}
+
+{% if item.tipo == "texto" %}
+   {% capture class %}{{class}} grid-item-text{% endcapture %}
+   
+{% elsif item.tipo == "cita" %}
+   {% capture class %}{{class}} grid-item-text cursivo{% endcapture %}
+{% endif %}
+
+<div class="{{class}}">
+  {{item.content}}
+</div>

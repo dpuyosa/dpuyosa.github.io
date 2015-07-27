@@ -1,0 +1,8 @@
+---
+title: inicio
+layout: grid
+---
+{% for post in site.posts %}
+   {% assign item = post %}
+   {% include type.html %}
+{% endfor %}
