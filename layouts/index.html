@@ -1,0 +1,12 @@
+{{ partial "head.html" . }}
+{{ partial "menu.html" . }}
+<div class="grid">
+   {{ range .Data.Pages }}{{ if eq .Type "post" }}
+      {{if .Params.texto}} {{ .Scratch.Add "class" "grid-item grid-item-text" }}
+      {{else}} {{ .Scratch.Add "class" "grid-item" }} {{end}}
+      <div class="{{ .Scratch.Get "class" }}">
+         {{ .Content }}
+      </div>
+      {{ end }}{{ end }}
+</div>
+{{ partial "footer.html" . }}

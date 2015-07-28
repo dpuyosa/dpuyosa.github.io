@@ -1,0 +1,7 @@
+baseurl : "http://dpuyosa.github.io/"
+languageCode : "es-es"
+
+title : "David's Blog"
+description: "Blog de pŕactica"
+
+metadataformat: yaml
