@@ -5,3 +5,5 @@ title : "David's Blog"
 description: "Blog de pŕactica"
 
 metadataformat: yaml
+relativeURLs: true
+disableRSS: true
