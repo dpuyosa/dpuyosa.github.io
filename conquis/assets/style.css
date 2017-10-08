@@ -17,3 +17,56 @@ section{
 .container{
     overflow-y: auto;
 }
+
+#Escudo{
+    width: 128px;
+    padding-bottom: 1rem;
+    margin: auto;
+}
+
+#Revista{
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: auto;
+}
+
+#Menu{
+    width: 63%;
+    margin: auto;
+    word-wrap: break-word;
+}
+
+#Menu a{
+    color: lightsalmon;
+}
+
+#Menu a:hover{
+    color: darksalmon;
+}
+
+.navbar-menu, .navbar-start{
+    margin: auto;
+    width: 100%;
+}
+
+.columns{
+    margin:0;
+}
+aside.menu{
+    margin: auto;
+}
+
+/* Desktop -> mobile */
+@media (max-width: 1023px){
+    #Escudo{
+        margin: 0;
+        padding: 0;
+        width: 43px;
+    }
+
+    #Revista{
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+}
