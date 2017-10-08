@@ -1,0 +1,19 @@
+html, body{
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+article{
+    padding: 1%;
+    margin: 5%;
+}
+
+section{
+    padding: 0 !important;
+    height: 100%;
+}
+
+.container{
+    overflow-y: auto;
+}

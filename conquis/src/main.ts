@@ -1,0 +1,4 @@
+function init(): void{
+}
+
+init()
