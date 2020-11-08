@@ -1,0 +1,95 @@
+<!doctype html>
+
+<html lang="en" style="height: 100%; background-color: teal;">
+
+<head>
+    <meta charset="utf-8">
+    <title>Lotto haha</title>
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
+
+
+</head>
+
+<body style="height: 100%; text-align: center;">
+    <table style="margin-top: 40%;margin-left: auto;margin-right: auto;">
+        <tr>
+            <td>
+                <div>
+                    <input type="number" id="range" name="range" min="1" placeholder="rango">
+                    <input type="number" id="count" name="count" min="1" placeholder="cantidad">
+                    <input type="submit" value="Voy a tener suerte!!!" onclick="myFunction()">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="margin: 2em; font-size: 3em; font-weight: bold;">
+                    <label id="output"></label>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function myFunction() {
+            range = Math.floor(document.getElementById('range').value)
+            count = document.getElementById('count').value
+            document.getElementById('output').textContent = ""
+
+            lowerCount = Math.ceil(count / 2)
+            upperCount = count - lowerCount
+
+            lowerRange = Math.ceil(range / 2)
+
+            let pairs = 0
+            let odds = 0
+
+            output = []
+
+            for (let index = 0; index < lowerCount; index++) {
+                while (true) {
+                    num = getRandomInt(1, lowerRange)
+                    isPair = num % 2 == 0
+                    if (isPair && pairs < lowerCount && !output.includes(num)) {
+                        pairs += 1
+                        break
+
+                    } else if (!isPair && odds < upperCount && !output.includes(num)) {
+                        odds += 1
+                        break
+                    }
+                }
+                output.push(num)
+            }
+
+            for (let index = 0; index < upperCount; index++) {
+                while (true) {
+                    num = getRandomInt(lowerRange + 1, range)
+                    isPair = num % 2 == 0
+                    if (isPair && pairs < lowerCount && !output.includes(num)) {
+                        pairs += 1
+                        break
+
+                    } else if (!isPair && odds < upperCount && !output.includes(num)) {
+                        odds += 1
+                        break
+                    }
+                }
+                output.push(num)
+            }
+
+            output.sort((a, b) => a - b)
+            output.forEach(v => {
+                document.getElementById('output').textContent += " " + v
+            });
+        }
+    </script>
+</body>
+
+</html>
