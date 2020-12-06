@@ -25,69 +25,94 @@
             <td>
                 <div style="margin: 2em; font-size: 3em; font-weight: bold;">
                     <label id="output"></label>
+                    <br><label id="outputt"></label>
                 </div>
             </td>
         </tr>
     </table>
 
     <script>
+        // 0: 1-10 | 1: 11-20 | 2: 21-30 | 3: 31-40 | 4: 41-50 | 5: 51-60
+        function getTen(n) {
+            return parseInt((n - 1) / 10)
+        }
+
         function getRandomInt(min, max) {
             min = Math.ceil(min);
             max = Math.floor(max);
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
+        function probableTens(numbers, count) {
+            output = numbers.map(getTen)
+            output = output.reduce((prev, curr) => (prev[curr] = ++prev[curr] || 1, prev), {});
+            output = Object.keys(output).map(function (key) { return output[key]; });
+            output.sort((a, b) => b - a)
+            console.log(output)
+
+            if (count == 6 && output.length < 5 && Math.max(...output) < 4 && Math.min(...output) == 1)
+                return true
+            else if (count == 5 && Math.max(...output) == 2)
+                return true
+            else if (count != 6 && count != 5)
+                return true
+            else
+                return false
+        }
+
         function myFunction() {
             range = Math.floor(document.getElementById('range').value)
             count = document.getElementById('count').value
-            document.getElementById('output').textContent = ""
 
             lowerCount = Math.ceil(count / 2)
             upperCount = count - lowerCount
 
             lowerRange = Math.ceil(range / 2)
 
-            let pairs = 0
-            let odds = 0
+            do {
+                let pairs = 0
+                let odds = 0
 
-            output = []
+                output = []
 
-            for (let index = 0; index < lowerCount; index++) {
-                while (true) {
-                    num = getRandomInt(1, lowerRange)
-                    isPair = num % 2 == 0
-                    if (isPair && pairs < lowerCount && !output.includes(num)) {
-                        pairs += 1
-                        break
+                for (let index = 0; index < lowerCount; index++) {
+                    while (true) {
+                        num = getRandomInt(1, lowerRange)
+                        isPair = num % 2 == 0
+                        if (isPair && pairs < lowerCount && !output.includes(num)) {
+                            pairs += 1
+                            break
 
-                    } else if (!isPair && odds < upperCount && !output.includes(num)) {
-                        odds += 1
-                        break
+                        } else if (!isPair && odds < upperCount && !output.includes(num)) {
+                            odds += 1
+                            break
+                        }
                     }
+                    output.push(num)
                 }
-                output.push(num)
-            }
 
-            for (let index = 0; index < upperCount; index++) {
-                while (true) {
-                    num = getRandomInt(lowerRange + 1, range)
-                    isPair = num % 2 == 0
-                    if (isPair && pairs < lowerCount && !output.includes(num)) {
-                        pairs += 1
-                        break
+                for (let index = 0; index < upperCount; index++) {
+                    while (true) {
+                        num = getRandomInt(lowerRange + 1, range)
+                        isPair = num % 2 == 0
+                        if (isPair && pairs < lowerCount && !output.includes(num)) {
+                            pairs += 1
+                            break
 
-                    } else if (!isPair && odds < upperCount && !output.includes(num)) {
-                        odds += 1
-                        break
+                        } else if (!isPair && odds < upperCount && !output.includes(num)) {
+                            odds += 1
+                            break
+                        }
                     }
+                    output.push(num)
                 }
-                output.push(num)
-            }
 
-            output.sort((a, b) => a - b)
-            output.forEach(v => {
-                document.getElementById('output').textContent += " " + v
-            });
+                output.sort((a, b) => a - b)
+                document.getElementById('output').textContent = ""
+                output.forEach(v => {
+                    document.getElementById('output').textContent += " " + v
+                });
+            } while (!probableTens(output, count))
         }
     </script>
 </body>
