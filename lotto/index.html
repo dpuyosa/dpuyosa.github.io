@@ -47,8 +47,8 @@
             output = numbers.map(getTen)
             output = output.reduce((prev, curr) => (prev[curr] = ++prev[curr] || 1, prev), {});
             output = Object.keys(output).map(function (key) { return output[key]; });
-            output.sort((a, b) => b - a)
-            console.log(output)
+            // output.sort((a, b) => b - a)
+            // console.log(output)
 
             if (count == 6 && output.length < 5 && Math.max(...output) < 4 && Math.min(...output) == 1)
                 return true
